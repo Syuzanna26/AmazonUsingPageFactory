@@ -3,7 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-class BasicPage():
+class BasePage():
     def __init__(self, driver: webdriver.Chrome):
         self.driver = driver
 
@@ -12,7 +12,7 @@ class BasicPage():
             element = WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((by, value)))
             return element
         except:
-            print("Eror")
+            print("Eror: Element Not Found.")
             exit(1)
 
     def _click(self, webElement):

@@ -1,8 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from pages_.basicPage import BasicPage
+from pages_.basePage import BasePage
 
-class LoginPage(BasicPage):
+class LoginPage(BasePage):
     def __init__(self, driver):
         self.driver = driver
 
@@ -10,9 +10,9 @@ class LoginPage(BasicPage):
         userNameFieldElement = self._find_element(By. ID, "ap_email")
         self._fill_field(userNameFieldElement, username)
 
-    def click_on_continu_button(self):
-        continuButtonElement = self._find_element(By.ID, "continue")
-        self._click(continuButtonElement)
+    def click_on_continue_button(self):
+        continueButtonElement = self._find_element(By.ID, "continue")
+        self._click(continueButtonElement)
 
     def fill_password_field(self, password):
         passwordFieldElement = self._find_element(By.ID, "ap_password")
